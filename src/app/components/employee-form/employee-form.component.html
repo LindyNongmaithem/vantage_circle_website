@@ -1,0 +1,98 @@
+<div class="modal-overlay" *ngIf="isVisible" (click)="closeForm()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-header-content">
+        <div>
+          <h2>{{ isEditMode ? 'Edit Employee' : 'Add New Employee' }}</h2>
+          <p class="modal-subtitle">{{ isEditMode ? 'Update employee information' : 'Create a new employee record' }}</p>
+        </div>
+        <button class="close-btn" (click)="closeForm()" aria-label="Close modal" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="employee-form">
+      <div class="form-group">
+        <label for="name">Name <span class="required">*</span></label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          class="form-control"
+          [class.invalid]="isFieldInvalid('name')"
+          placeholder="Enter employee name"
+        />
+        <div class="error-message" *ngIf="isFieldInvalid('name')">
+          {{ getFieldError('name') }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="form-control"
+          [class.invalid]="isFieldInvalid('email')"
+          placeholder="Enter email address"
+        />
+        <div class="error-message" *ngIf="isFieldInvalid('email')">
+          {{ getFieldError('email') }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department <span class="required">*</span></label>
+        <select
+          id="department"
+          formControlName="department"
+          class="form-control"
+          [class.invalid]="isFieldInvalid('department')"
+        >
+          <option value="">Select a department</option>
+          <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+        </select>
+        <div class="error-message" *ngIf="isFieldInvalid('department')">
+          {{ getFieldError('department') }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="dateOfJoining">Date of Joining <span class="required">*</span></label>
+        <input
+          type="date"
+          id="dateOfJoining"
+          formControlName="dateOfJoining"
+          class="form-control"
+          [class.invalid]="isFieldInvalid('dateOfJoining')"
+          [max]="maxDate"
+        />
+        <div class="error-message" *ngIf="isFieldInvalid('dateOfJoining')">
+          {{ getFieldError('dateOfJoining') }}
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button 
+          type="button" 
+          class="btn btn-secondary" 
+          (click)="closeForm()"
+          aria-label="Cancel form">
+          Cancel
+        </button>
+        <button 
+          type="submit" 
+          class="btn btn-primary" 
+          [disabled]="employeeForm.invalid"
+          [attr.aria-label]="isEditMode ? 'Update employee' : 'Add employee'">
+          <span *ngIf="!isEditMode">Add Employee</span>
+          <span *ngIf="isEditMode">Update Employee</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

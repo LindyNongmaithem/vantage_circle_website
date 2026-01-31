@@ -1,0 +1,18 @@
+<div class="app-container">
+  <app-employee-list
+    (editEmployee)="openEditForm($event)"
+  ></app-employee-list>
+
+  <app-fab-button
+    icon="+"
+    label="Add New Employee"
+    (clicked)="openAddForm()">
+  </app-fab-button>
+
+  <app-employee-form
+    [employee]="editingEmployee"
+    [isVisible]="showForm"
+    (close)="closeForm()"
+    (save)="saveEmployee($event)">
+  </app-employee-form>
+</div>

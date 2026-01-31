@@ -1,0 +1,55 @@
+<div class="employee-list-container">
+  <app-dashboard-header>
+    <button 
+      class="btn btn-primary" 
+      (click)="onExportCSV()" 
+      [disabled]="filteredEmployees.length === 0"
+      type="button"
+      aria-label="Export employees to CSV">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+      <span>Export CSV</span>
+    </button>
+  </app-dashboard-header>
+
+  <div class="metrics-cards">
+    <app-metric-card
+      label="Total Employees"
+      [value]="metrics.totalEmployees"
+      iconType="primary">
+    </app-metric-card>
+    <app-metric-card
+      label="Active Departments"
+      [value]="metrics.activeDepartments"
+      iconType="success">
+    </app-metric-card>
+    <app-metric-card
+      label="New Hires This Month"
+      [value]="metrics.newHiresThisMonth"
+      iconType="warning">
+    </app-metric-card>
+    <app-metric-card
+      label="Total Departments"
+      [value]="metrics.totalDepartments"
+      iconType="info">
+    </app-metric-card>
+  </div>
+
+  <app-employee-filters
+    [searchTerm]="searchTerm"
+    [selectedDepartment]="selectedDepartment"
+    [departments]="departments"
+    (searchChange)="onSearchChange($event)"
+    (departmentChange)="onDepartmentChange($event)">
+  </app-employee-filters>
+
+  <app-employee-table
+    [employees]="filteredEmployees"
+    [sortField]="sortField"
+    [sortDirection]="sortDirection"
+    (sort)="onSort($event)"
+    (edit)="onEditEmployee($event)"
+    (delete)="onDeleteEmployee($event)">
+  </app-employee-table>
+</div>
