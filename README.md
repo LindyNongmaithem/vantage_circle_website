@@ -5,15 +5,15 @@ A modern, feature-rich Employee Management Dashboard built with Angular and Type
 ## Features
 
 ### Core Features
-- ✅ **List Employees** - View all employees in a clean, organized table
-- ✅ **Add New Employees** - Create new employee records with validation
-- ✅ **Edit Existing Employees** - Update employee information
-- ✅ **Delete Employees** - Remove employees with confirmation
+-  **List Employees** - View all employees in a clean, organized table
+-  **Add New Employees** - Create new employee records with validation
+-  **Edit Existing Employees** - Update employee information
+-  **Delete Employees** - Remove employees with confirmation
 
 ### Data Management
-- ✅ **Angular Services** - Centralized data management using EmployeeService
-- ✅ **LocalStorage Persistence** - All employee data persists across page reloads
-- ✅ **Reactive Data Flow** - Uses RxJS Observables for real-time updates
+-  **Angular Services** - Centralized data management using EmployeeService
+-  **LocalStorage Persistence** - All employee data persists across page reloads
+-  **Reactive Data Flow** - Uses RxJS Observables for real-time updates
 
 ### Employee Fields
 Each employee record includes:
@@ -23,19 +23,19 @@ Each employee record includes:
 - **Date of Joining** (cannot be a future date, required)
 
 ### UI Features
-- ✅ **Sorting** - Sort by Name or Date of Joining (ascending/descending)
-- ✅ **Filtering** - Filter employees by Department
-- ✅ **Search** - Case-insensitive search by Name or Email
-- ✅ **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
+-  **Sorting** - Sort by Name or Date of Joining (ascending/descending)
+-  **Filtering** - Filter employees by Department
+-  **Search** - Case-insensitive search by Name or Email
+-  **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
 
 ### Validation
-- ✅ **Form Validation** - All fields validated before submission
-- ✅ **Real-time Error Messages** - Clear, user-friendly error messages
-- ✅ **Visual Feedback** - Invalid fields highlighted with red borders
+-  **Form Validation** - All fields validated before submission
+-  **Real-time Error Messages** - Clear, user-friendly error messages
+-  **Visual Feedback** - Invalid fields highlighted with red borders
 
 ### Bonus Features
-- ✅ **CSV Export** - Export filtered employee list as CSV file
-- ✅ **Dark Mode Toggle** - Switch between light and dark themes (persists preference)
+-  **CSV Export** - Export filtered employee list as CSV file
+-  **Dark Mode Toggle** - Switch between light and dark themes (persists preference)
 
 ## Technology Stack
 
@@ -43,6 +43,13 @@ Each employee record includes:
 - **TypeScript** 4.9.5
 - **RxJS** 7.8.0
 - **Angular Forms** (Reactive Forms & Template-driven Forms)
+
+  ## Steps to Run the Project
+1. Clone the repository
+2. Navigate to the project directory
+3. Run `npm install`
+4. Run `ng serve`
+5. Open http://localhost:4200 in the browser
 
 ## Project Structure
 
@@ -75,7 +82,7 @@ src/
 ### Prerequisites
 
 - Node.js (v14 or higher)
-- npm (v6 or higher) or yarn
+- npm (v6 or higher)
 - Angular CLI (v15 or higher)
 
 ### Installation Steps
@@ -122,12 +129,12 @@ The build artifacts will be stored in the `dist/` directory.
 3. Click "Add Employee" button
 
 ### Editing an Employee
-1. Click the **✏️ Edit** button next to the employee in the list
+1. Click the **Edit** button next to the employee in the list
 2. Modify the fields as needed
 3. Click "Update Employee" button
 
 ### Deleting an Employee
-1. Click the **🗑️ Delete** button next to the employee
+1. Click the **Delete** button next to the employee
 2. Confirm the deletion in the dialog
 
 ### Searching Employees
@@ -143,10 +150,10 @@ The build artifacts will be stored in the `dist/` directory.
 - Visual indicators (↑ ↓) show the current sort direction
 
 ### Exporting to CSV
-- Click the **📥 Export CSV** button to download the currently filtered employee list as a CSV file
+- Click the **Export CSV** button to download the currently filtered employee list as a CSV file
 
 ### Dark Mode
-- Click the **🌙 Dark Mode** / **☀️ Light Mode** button to toggle between themes
+- Click the **Dark Mode** / **Light Mode** button to toggle between themes
 - Your preference is saved and will persist across sessions
 
 ## Assumptions Made
@@ -158,32 +165,7 @@ The build artifacts will be stored in the `dist/` directory.
 5. **Department List**: Fixed list of departments (HR, Engineering, Sales, Marketing, Finance, Operations)
 6. **Browser Support**: Modern browsers with LocalStorage support (Chrome, Firefox, Safari, Edge)
 
-## Code Quality Features
 
-- **TypeScript**: Full type safety with interfaces and types
-- **Modular Architecture**: Separated concerns (components, services, models)
-- **Reactive Programming**: Uses RxJS Observables for data flow
-- **Form Validation**: Comprehensive validation with custom validators
-- **Error Handling**: Proper error handling for localStorage operations
-- **Responsive Design**: Mobile-first approach with CSS media queries
-- **Accessibility**: Semantic HTML and proper form labels
-- **Clean Code**: Well-organized, readable, and maintainable code structure
 
-## Future Enhancements (Optional)
-
-- Add pagination for large employee lists
-- Implement email uniqueness validation
-- Add employee photo upload
-- Add more filter options (date range, etc.)
-- Implement undo/redo functionality
-- Add employee statistics/charts
-- Implement role-based access control
-- Add import from CSV functionality
-
-## License
-
-This project is created for assessment purposes.
-
-## Author
 
 Created as part of a technical assessment for Vantage Circle.
